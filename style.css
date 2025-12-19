@@ -1,0 +1,131 @@
+/* 變數設定：方便統一修改顏色 */
+:root {
+    --uk-blue: #00247d;
+    --uk-red: #cf142b;
+    --bg-color: #f8f9fa;
+    --card-white: #ffffff;
+    --text-dark: #333;
+}
+
+body {
+    font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+}
+
+/* 標題區：背景圖與藍色遮罩 */
+header {
+    background: var(--uk-blue);
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+    background-image: linear-gradient(rgba(0, 36, 125, 0.8), rgba(0, 36, 125, 0.8)),
+        url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1000&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+/* 倒數計時器 */
+#countdown-container {
+    background: white;
+    max-width: 600px;
+    margin: -30px auto 30px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#timer {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--uk-red);
+    margin: 10px 0;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    border-bottom: 3px solid var(--uk-red);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* 行程卡片格狀佈局 (Grid) */
+.itinerary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.card {
+    background: var(--card-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.tag {
+    font-size: 0.75rem;
+    background: #e9ecef;
+    padding: 3px 10px;
+    border-radius: 20px;
+    color: #495057;
+}
+
+/* 準備進度表格 */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.data-table th,
+.data-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.data-table th {
+    background-color: #f1f3f5;
+}
+
+.status-dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+}

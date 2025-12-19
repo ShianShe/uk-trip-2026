@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 英國旅遊計畫 - 日期待定</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🇬🇧 2026 英國夏日之旅</h1>
+        <p>探索倫敦、蘇格蘭高地與古老小鎮</p>
+    </header>
+
+    <div id="countdown-container">
+        <h3>距離 2026/06/01 預計出發還有</h3>
+        <div id="timer">計算中...</div>
+        <p class="sub-text">（目前日期未定，先以 6/1 為目標進行模組化規劃）</p>
+    </div>
+
+    <main>
+        <section id="itinerary">
+            <h2>📍 行程模組 (可隨日期彈性調換)</h2>
+            <div class="itinerary-grid">
+
+                <article class="card">
+                    <div class="card-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?auto=format&fit=crop&w=500&q=60');">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">都會 / 藝術</span>
+                        <h3>倫敦 (London)</h3>
+                        <ul>
+                            <li>大英博物館 (需提早預約免門票)</li>
+                            <li>西區看音樂劇 (Les Misérables)</li>
+                            <li>Borough Market 美食巡禮</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1520106212299-d99c443e4568?auto=format&fit=crop&w=500&q=60');">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">歷史 / 建築</span>
+                        <h3>愛丁堡 (Edinburgh)</h3>
+                        <ul>
+                            <li>愛丁堡城堡導覽</li>
+                            <li>維多利亞街拍照</li>
+                            <li>卡爾頓山看夕陽</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1533036688755-9002574062e7?auto=format&fit=crop&w=500&q=60');">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">小鎮 / 鄉村</span>
+                        <h3>科茨沃爾德 (Cotswolds)</h3>
+                        <ul>
+                            <li>Bibury 著名的排屋排照</li>
+                            <li>水上伯頓 (Bourton-on-the-Water)</li>
+                            <li>鄉村奶油茶 (Cream Tea) 體驗</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="progress" style="margin-top: 50px;">
+            <h2>📝 籌備清單</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>項目</th>
+                        <th>狀態</th>
+                        <th>備註</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>機票比價</td>
+                        <td><span class="status-dot" style="background-color: #ffc107;"></span> 追蹤中</td>
+                        <td>使用 Google Flights 追蹤 6 月機票</td>
+                    </tr>
+                    <tr>
+                        <td>火車通行證 (BritRail)</td>
+                        <td><span class="status-dot"></span> 待研究</td>
+                        <td>評估是否比分段買便宜</td>
+                    </tr>
+                    <tr>
+                        <td>申根簽證/入境文件</td>
+                        <td><span class="status-dot" style="background-color: #28a745;"></span> 免簽</td>
+                        <td>確認護照效期大於六個月</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 My UK Trip Planner | Made for June 2026</p>
+    </footer>
+
+    <script>
+        function updateTimer() {
+            // 設定目標日期：2026年6月1日
+            const targetDate = new Date("June 1, 2026 00:00:00").getTime();
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+
+            // 計算天、時、分
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            const timerElement = document.getElementById("timer");
+            if (diff > 0) {
+                timerElement.innerHTML = `${days} 天 ${hours} 小時 ${minutes} 分鐘`;
+            } else {
+                timerElement.innerHTML = "旅行開始囉！";
+            }
+        }
+
+        // 啟動倒數計時
+        updateTimer();
+        setInterval(updateTimer, 60000); // 每分鐘更新一次
+    </script>
+
+</body>
+
+</html>
